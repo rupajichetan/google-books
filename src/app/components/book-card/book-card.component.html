@@ -1,0 +1,27 @@
+<div class="card">
+  <img
+    class="background-img"
+    src="{{ book.volumeInfo?.imageLinks?.thumbnail }}"
+    *ngIf="!loading && book.volumeInfo?.imageLinks?.thumbnail"
+  />
+  <div
+    class="background-img"
+    *ngIf="loading || !book.volumeInfo?.imageLinks?.thumbnail"
+  ></div>
+
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ loading ? ".............." : book.volumeInfo.title }}
+    </h5>
+    <h5 class="card-subTitle">
+      by: {{ loading ? ".........." : getAuthorName(book.volumeInfo.authors) }}
+    </h5>
+    <p class="card-text text-truncate text-truncate--2">
+      {{
+        loading
+          ? "..........................................."
+          : book.volumeInfo.description
+      }}
+    </p>
+  </div>
+</div>

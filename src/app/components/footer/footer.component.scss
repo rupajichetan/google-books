@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+@import "../../mixin.scss";
+
+.footer {
+  background-color: $black;
+  color: $white;
+  padding: 8px;
+  position: fixed;
+  bottom: 0;
+
+  @include for-large-device {
+    padding: 8px 0;
+  }
+}

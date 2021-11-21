@@ -1,0 +1,24 @@
+<section class="navbar-section">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark justify-content-between">
+      <a class="navbar-brand" href="#">{{ brandName }}</a>
+      <button class="navbar-toggler" type="button" (click)="displayMenu()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        [ngClass]="[
+          'text-white ',
+          'collapse',
+          'navbar-collapse',
+          showMenu ? 'show' : ''
+        ]"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item active" *ngFor="let link of navLinks">
+            <a class="nav-link" [href]="link.href">{{ link.label }} </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>

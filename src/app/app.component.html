@@ -1,0 +1,25 @@
+<div class="main">
+  <div class="container-fluid header-section">
+    <app-navbar></app-navbar>
+    <app-hero></app-hero>
+  </div>
+  <app-search-bar (clickEvent)="onSearchClick($event)"></app-search-bar>
+
+  <div class="container">
+    <div class="row">
+      <ng-container *ngIf="timerStarted || searching">
+        <div class="col-md-4 col-sm-12" *ngFor="let card of skeletonCards">
+          <app-book-card [book]="card" [loading]="true"></app-book-card>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="!timerStarted && !searching">
+        <div class="col-md-4 col-sm-12" *ngFor="let book of books">
+          <app-book-card [book]="book" [loading]="false"></app-book-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

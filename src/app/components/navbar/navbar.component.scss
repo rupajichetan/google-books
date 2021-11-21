@@ -1,0 +1,20 @@
+@import "../../variables.scss";
+
+.navbar-collapse {
+  justify-content: flex-end !important;
+}
+
+.navbar {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar-section {
+  background-color: rgba($color: $black, $alpha: 0.7) !important;
+}
+
+.navbar-brand {
+  font-size: 1.7rem;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
